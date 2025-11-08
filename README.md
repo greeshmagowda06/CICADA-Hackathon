@@ -3,7 +3,7 @@ Login: `admin` / `admin123`
 ---
 
 ## ✨ Features
-- ✅ AI-powered conflict-free scheduling (Google OR-Tools)
+- ✅ AI-powered conflict-free scheduling
 - ✅ NEP 2020 course types (Major, Minor, Multidisciplinary, etc.)
 - ✅ Real-time timetable generation (< 3 seconds)
 - ✅ Export to PDF/Excel
