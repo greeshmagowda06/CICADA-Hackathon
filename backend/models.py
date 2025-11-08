@@ -165,14 +165,12 @@ class Timetable:
     
     @staticmethod
     def bulk_insert(db, timetable_data):
-        query = """
-            INSERT INTO timetable (course_id, faculty_id, room_id, day, slot)
-            VALUES (?, ?, ?, ?, ?)
-        """
+        query = "INSERT INTO timetable (course_id, faculty_id, room_id, day, slot) VALUES (?, ?, ?, ?, ?)"
         try:
-            with db.conn.cursor() as cursor:
-                cursor.executemany(query, timetable_data)
-                db.conn.commit()
+            cursor = db.conn.cursor()
+            cursor.executemany(query, timetable_data)
+            db.conn.commit()
+            cursor.close()  # Close cursor after use
             return True
         except Exception as e:
             db.conn.rollback()
